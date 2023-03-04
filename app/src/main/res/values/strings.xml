@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Roomy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="app_intro_message">Looking for your perfect flatmate? join the millions of people who found theirs through Roomy App</string>
+
+    <string name="policy_agreement_message">By continuing, you agree to the Roomy User Account Agreement and Privacy.</string>
+
+    <string name="inputNames_agreement_message">By clicking, you agree to the Roomy User Account Agreement and Privacy.</string>
+
+    <string name="aim_for_one">Aim for one that’s easy to remember but hard </string>
+    <string name="eightChar"> 8 characters or more </string>
+    <string name="oneUpperC"> 1 uppercase character</string>
+    <string name="phoneNumberCondition">You’ll use this number when you log in and if you ever need to rest your password.</string>
+    <string name="studentQuestion">I am a student</string>
+    <string name="uploadMessage">Upload or take two photos of yourself to be abke to sign up. You can change them later.</string>
+    <string name="letEveryoneKnow">Let everyone know what you’re interested in by adding it to your profile</string>
+    <string name="oneSymbol">1 symbol or number</string>
+    <string name="pleaseEnterOtp">Please enter the code sent to</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:tabIndicatorColor="@color/custom_green"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorAnimationMode="linear"
+        app:tabTextColor="@color/hint_text_grey"
+        app:tabSelectedTextColor="@color/custom_green"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="People"
+            android:padding="10dp"
+
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabApartment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apartment"
+            android:padding="10dp"
+
+            />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CDCDCD"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148042889891",
+    "project_id": "roomy-d448b",
+    "storage_bucket": "roomy-d448b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148042889891:android:089f3fe1e3c0de0da6dd16",
+        "android_client_info": {
+          "package_name": "com.example.roomy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148042889891-88orqq0d3gvk642gnvo49u7ip60s8ml8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSqZFkxr3UBce4hm5drZAgt6C4a8t7heo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148042889891-88orqq0d3gvk642gnvo49u7ip60s8ml8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
