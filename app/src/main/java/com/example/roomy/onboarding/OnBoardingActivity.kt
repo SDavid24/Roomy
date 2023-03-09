@@ -3,10 +3,12 @@ package com.example.roomy.onboarding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import com.example.roomy.R
 import com.example.roomy.SecondSplashFragment
 
 class OnBoardingActivity : AppCompatActivity() {
+    private val  TAG = "OnBoardingActivity"
     private val firstSplashFragment = FirstSplashFragment()
     private val secondSplashFragment = SecondSplashFragment()
     private val signupOptionsFragment = SignupOptionsFragment()
@@ -19,8 +21,9 @@ class OnBoardingActivity : AppCompatActivity() {
     private val inputBirthdayFragment = InputBirthdayFragment()
     private val uploadFirstPhotosFragment = UploadFirstPhotosFragment()
     private val onboardBaseFragment = OnboardBaseFragment()
-
     private val addInterestFragment = AddInterestFragment()
+    private val signInFragment = SignInFragment()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,7 @@ class OnBoardingActivity : AppCompatActivity() {
        //     commit()
       //  }
 
+        Log.d(TAG, "Loading point is here")
         splashLoad()
 
     }
