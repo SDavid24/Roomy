@@ -26,12 +26,12 @@ class OnBoardingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding)
 
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment, uploadFirstPhotosFragment)
-            commit()
-        }
+       // supportFragmentManager.beginTransaction().apply {
+       //     replace(R.id.flFragment, uploadFirstPhotosFragment)
+       //     commit()
+      //  }
 
-        //splashLoad()
+        splashLoad()
 
     }
 
