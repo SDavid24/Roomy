@@ -24,10 +24,7 @@
             android:name=".onboarding.OnBoardingActivity"
             android:exported="true"
             android:theme="@style/Theme.Roomy.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
             <!-- android:theme="@style/Theme.Roomy.NoActionBar" -->
         </activity>
         <activity
@@ -36,7 +33,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
