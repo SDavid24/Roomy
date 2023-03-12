@@ -23,4 +23,7 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="login_directive">Login with the email registered  on your Roomy account</string>
 
+
+    <string name="please_wait">Please Wait&#8230;</string>
+
 </resources>

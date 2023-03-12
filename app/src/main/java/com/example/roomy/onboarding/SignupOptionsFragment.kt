@@ -10,11 +10,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import com.example.roomy.R
 import com.example.roomy.databinding.FragmentSignupOptionsBinding
 
 class SignupOptionsFragment : Fragment() {
 
     private lateinit var signupOptionsBinding : FragmentSignupOptionsBinding
+    private val inputEmailFragment = InputEmailFragment()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -25,6 +28,8 @@ class SignupOptionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        btnClickListener()
 
         val tv = TextView(requireContext())
         val toolBarTypeface: Typeface =
@@ -44,10 +49,18 @@ class SignupOptionsFragment : Fragment() {
 
         //resetting the font of the text to the appropriate one
         val typeface: Typeface = Typeface.createFromAsset(requireActivity().assets, "DMSans.ttf")
-        signupOptionsBinding.tvJoinNow.typeface = typeface
-        signupOptionsBinding.tvJoinWithApple.typeface = typeface
-        signupOptionsBinding.tvJoinWithGoogle.typeface = typeface
+        signupOptionsBinding.btnJoinNow.typeface = typeface
+        signupOptionsBinding.btnJoinWithApple.typeface = typeface
+        signupOptionsBinding.btnJoinWithGoogle.typeface = typeface
     }
 
-
+    fun btnClickListener() {
+        signupOptionsBinding.btnJoinNow.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, inputEmailFragment)
+                addToBackStack(null)
+                commit()
+            }
+        }
+    }
 }

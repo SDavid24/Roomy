@@ -8,6 +8,7 @@ import android.os.Handler
 import android.view.WindowInsetsController
 import android.view.WindowManager
 import com.example.roomy.databinding.ActivitySplashBinding
+import com.example.roomy.onboarding.OnBoardingActivity
 
 class SplashActivity : AppCompatActivity() {
     lateinit var activitySplashBinding : ActivitySplashBinding
@@ -29,7 +30,10 @@ class SplashActivity : AppCompatActivity() {
 
         //This sets the font of the texts in this activity
         val typeface : Typeface = Typeface.createFromAsset(assets, "snapitc.ttf")
-       // activitySplashBinding.roomy.typeface = typeface
+        activitySplashBinding.roomy?.typeface  = typeface
+
+        splashLoad()
+
     }
 
 
@@ -37,7 +41,7 @@ class SplashActivity : AppCompatActivity() {
     private fun splashLoad(){
 
         Handler().postDelayed({
-            //startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, OnBoardingActivity::class.java))
 
             //val currentUserId = FireStoreClass().getCurrentUserId()
 
