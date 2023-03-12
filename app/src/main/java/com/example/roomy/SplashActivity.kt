@@ -1,5 +1,6 @@
 package com.example.roomy
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -29,7 +30,7 @@ class SplashActivity : AppCompatActivity() {
 
         //This sets the font of the texts in this activity
         val typeface : Typeface = Typeface.createFromAsset(assets, "snapitc.ttf")
-       // activitySplashBinding.roomy.typeface = typeface
+        activitySplashBinding.roomy?.typeface = typeface
     }
 
 
