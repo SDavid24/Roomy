@@ -3,7 +3,6 @@ package com.example.roomy.onboarding
 import android.Manifest
 import android.app.Activity.RESULT_OK
 import android.content.*
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Typeface
 import android.net.Uri
@@ -18,11 +17,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.net.toUri
-import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.roomy.MainActivity
 import com.example.roomy.R
@@ -31,6 +27,7 @@ import com.example.roomy.utils.Constants.GALLERY_REQUEST_CODE
 import com.example.roomy.utils.Constants.IMAGE_DIRECTORY
 import com.example.roomy.databinding.FragmentUploadFirstPhotosBinding
 import com.example.roomy.dataobject.User
+import com.example.roomy.firebase.FirestoreClass
 import com.example.roomy.utils.Constants
 import com.example.roomy.utils.PrefManager
 import com.google.firebase.auth.FirebaseAuth

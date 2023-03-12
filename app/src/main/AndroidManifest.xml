@@ -34,6 +34,7 @@
             android:exported="true"
             android:theme="@style/Theme.Roomy.NoActionBar" />
 
+
         <activity
             android:name=".onboarding.OnBoardingActivity"
             android:exported="true"
@@ -43,13 +44,9 @@
         </activity>
 
         <activity
-            android:name=".SplashActivity"
-            android:exported="true">
-        </activity>
-
-        <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+        </activity>
     </application>
 
 </manifest>

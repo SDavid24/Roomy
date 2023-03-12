@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.roomy.SecondSplashFragment
-import com.example.roomy.databinding.ActivitySplashBinding
 import com.example.roomy.databinding.FragmentFirstSplashBinding
 
 class FirstSplashFragment : OnboardBaseFragment() {
@@ -26,7 +25,6 @@ class FirstSplashFragment : OnboardBaseFragment() {
         return firstSplashBinding.root
     }
 
-    lateinit var activitySplashBinding : ActivitySplashBinding
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

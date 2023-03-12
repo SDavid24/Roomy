@@ -20,5 +20,8 @@
     <color name="dark_grey">#5F5F5F</color>
 
 
+    <color name="snackBar_error_color">#F72400</color>
+    <color name="progress_bar_text">#212121</color>
+
 
 </resources>

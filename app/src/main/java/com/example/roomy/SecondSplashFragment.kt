@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.roomy.databinding.FragmentSecondSplashBinding
 import com.example.roomy.onboarding.InputNamesFragment
+import com.example.roomy.onboarding.SignInFragment
 
 
 class SecondSplashFragment : Fragment() {
@@ -22,6 +23,7 @@ class SecondSplashFragment : Fragment() {
     private var image1isDisplayed = false
     var imageArray = intArrayOf(R.drawable.alone_time, R.drawable.alone_time_two)
     private val inputNamesFragment = InputNamesFragment()
+    private val signInFragment = SignInFragment()
 
 
     override fun onCreateView(
@@ -58,13 +60,7 @@ class SecondSplashFragment : Fragment() {
         secondSplashBinding.getStarted.typeface = typeface
         secondSplashBinding.signIn.typeface = typeface
 
-
-        secondSplashBinding.getStarted.setOnClickListener{
-            parentFragmentManager.beginTransaction().apply {
-                replace(R.id.flFragment, inputNamesFragment)
-                commit()
-            }
-        }
+        btnClickListeners()
 
     }
 
@@ -97,6 +93,22 @@ class SecondSplashFragment : Fragment() {
         switchToSplashImage1()
     }
 
+    private fun btnClickListeners(){
+        secondSplashBinding.getStarted.setOnClickListener{
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, inputNamesFragment)
+                commit()
+            }
+        }
+
+        secondSplashBinding.signIn.setOnClickListener{
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, signInFragment)
+                commit()
+            }
+        }
+
+    }
 
 }
 
