@@ -14,38 +14,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Roomy">
         <activity
-            android:name=".FirstActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+            android:name=".ui.mainoperations.RoomyBaseActivity"
+            android:exported="false" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.Roomy.NoActionBar" />
-
-        <activity
-            android:name=".TestActivity"
+            android:name=".ui.mainoperations.profile.ProfileActivity"
             android:exported="true"
-            android:theme="@style/Theme.Roomy.NoActionBar" />
+            android:theme="@style/Theme.Roomy.NoActionBar">
 
-
+        </activity>
         <activity
-            android:name=".onboarding.OnBoardingActivity"
+            android:name=".ui.onboarding.splashscreens.FirstActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.onboarding.OnBoardingActivity"
             android:exported="true"
             android:theme="@style/Theme.Roomy.NoActionBar">
 
             <!-- android:theme="@style/Theme.Roomy.NoActionBar" -->
         </activity>
-
         <activity
-            android:name=".MainActivity"
-            android:exported="true" >
+            android:name=".ui.mainoperations.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Roomy.NoActionBar2" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

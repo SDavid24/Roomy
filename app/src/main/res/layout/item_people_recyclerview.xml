@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="17dp"
+    android:layout_marginEnd="19dp"
+    android:paddingTop="8dp"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:civ_border_color="#CDCDCD"
+            app:civ_border_width="0.5dp"
+            android:contentDescription="@string/image_contentDescription"
+            tools:src="@drawable/alone_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginStart="9dp"
+            app:layout_constraintStart_toEndOf="@id/iv_image"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_nameAge"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:layout_marginTop="3dp"
+                tools:text="David Solomon, 25"
+                android:fontFamily="@font/dm_sans"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_location"
+                android:textColor="#625555"
+                android:textStyle="normal"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                tools:text="Lives in Agric, Lagos state"
+                android:fontFamily="@font/dm_sans"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_occupation"
+                android:textColor="#625555"
+                android:textStyle="normal"
+                android:textSize="10sp"
+                android:textAlignment="center"
+                tools:text="Data Scientist"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:fontFamily="@font/dm_sans"
+                />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/forwarIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_forward_ios"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="14dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CDCDCD"
+        android:layout_marginStart="49dp"/>
+</LinearLayout>

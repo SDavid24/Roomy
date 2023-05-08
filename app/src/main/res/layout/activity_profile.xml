@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.mainoperations.profile.ProfileActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/llUserProfileImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/userCoverImage"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/apartment5"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="18dp"
+                android:src="@drawable/ic_arrow_back"
+                app:civ_circle_background_color="#D9D9D9CC"
+                android:layout_marginTop="34dp"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userProfileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="18dp"
+                android:src="@drawable/apartment1"
+                android:layout_marginTop="135dp"
+                android:layout_alignParentBottom="true"
+                />
+
+        </RelativeLayout>
+    <!--    <ImageView
+            android:id="@+id/userCoverImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/apartment5"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="18dp"
+            android:src="@drawable/ic_arrow_back_ios"
+            app:civ_circle_background_color="#D9D9D9CC"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="34dp"
+        />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userProfileImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="18dp"
+            android:src="@drawable/apartment1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="132dp"
+        />-->
+
+        <LinearLayout
+        android:id="@+id/llBio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="18dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/llUserProfileImage">
+
+        <LinearLayout
+            android:id="@+id/llStudiedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile_sch"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="7dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:text="Studied at university of Ibadan"
+                android:fontFamily="@font/dm_sans"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llLivesAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="11dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile_home"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="7dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:text="Lives in Ojodu Lagos"
+                android:fontFamily="@font/dm_sans"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llWorksAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="11dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile_work"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="7dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:text="Works at KFC "
+                android:fontFamily="@font/dm_sans"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llRelationshipStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="11dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile_love"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="7dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:text="Single"
+                android:fontFamily="@font/dm_sans"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/editBio"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:textColor="@color/custom_green"
+            android:textSize="14sp"
+            android:text="Edit Bio"
+            android:background="#D8ECEC"
+            android:fontFamily="@font/dm_sans"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/llBio"
+            android:layout_marginTop="17dp"/>
+
+        <LinearLayout
+            android:id="@+id/llInterest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/editBio"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="My Interest"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dm_sans"
+                android:textSize="18dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                >
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/interestChipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp"
+                    app:chipSpacing="6dp">
+
+                </com.google.android.material.chip.ChipGroup>
+
+
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/editInterest"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="Edit Interest"
+                android:background="@drawable/bg_grey_2"
+                android:fontFamily="@font/dm_sans"
+                android:textStyle="bold"
+                android:layout_marginTop="23dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHousePosted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/llInterest"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="19dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="House Posted"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dm_sans"
+                android:textSize="18dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHousePosted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                tools:listitem="@layout/item_house_posted"/>
+
+            <TextView
+                android:id="@+id/tvEditPost"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="Edit Post"
+                android:background="@drawable/bg_grey_2"
+                android:fontFamily="@font/dm_sans"
+                android:textStyle="bold"
+                android:layout_marginTop="27dp"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_nav_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

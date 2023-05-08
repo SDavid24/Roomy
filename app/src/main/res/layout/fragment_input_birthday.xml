@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".onboarding.InputBirthdayFragment">
+    tools:context=".ui.onboarding.signup.InputBirthdayFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/inputBirthdayToolbar"
@@ -40,6 +40,7 @@
         android:text="When is your Birthday?"/>
         
         <LinearLayout
+            android:id="@+id/llDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -57,11 +58,10 @@
                     android:id="@+id/tvMonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:letterSpacing="0.03"
                     android:text="Month"
                     android:textColor="@color/black"
-                    android:letterSpacing="0.03"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/etMonth"

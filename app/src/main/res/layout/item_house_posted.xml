@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="6dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/faint_green"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/apartmentImg"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:src="@drawable/apartment5"
+            android:scaleType="centerCrop"
+            android:padding="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="-8dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            android:paddingBottom="9dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvRentPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="$70,0000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/custom_green"
+                    android:fontFamily="@font/dm_sans"/>
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Two Bedroom Office Space"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/apartment_recyclerview_grey"
+                    android:fontFamily="@font/dm_sans"
+                    android:layout_marginTop="2dp"/>
+                <TextView
+                    android:id="@+id/tvFurnishStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Semi-furnished"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/apartment_recyclerview_grey"
+                    android:fontFamily="@font/dm_sans"
+                    android:layout_marginTop="-5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="35dp"
+                android:gravity="bottom">
+
+
+                <ImageView
+                    android:layout_width="11.4dp"
+                    android:layout_height="11.7dp"
+                    android:src="@drawable/ic_location"
+                    />
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Lagos State , Surulere"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/apartment_recyclerview_grey"
+                    android:fontFamily="@font/dm_sans"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="-5dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

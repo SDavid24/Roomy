@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/custom_green"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SplashActivity">
+    tools:context=".ui.onboarding.splashscreens.SecondSplashFragment">
 
     <ImageView
         android:id="@+id/displayImage"

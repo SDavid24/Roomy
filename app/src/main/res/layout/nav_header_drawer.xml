@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/custom_green"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/acctImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/flag_united_states_of_america"
+        android:layout_marginTop="56dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="15dp"/>
+
+        <TextView
+        android:id="@+id/acctName"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textSize="20sp"
+        android:text="David Solomon"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginStart="18dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/dm_sans"
+        android:layout_marginBottom="4dp"/>
+
+        <TextView
+        android:id="@+id/acctEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textSize="13sp"
+        android:text="the.real.david@gmail.com"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginStart="18dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/dm_sans"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:layout_width="17.6dp"
+        android:layout_height="19.2dp"
+        android:src="@drawable/ic_cancel_white"
+        android:layout_gravity=""
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="18.35dp"
+        />
+
+
+
+</LinearLayout>

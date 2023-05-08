@@ -12,6 +12,7 @@
     app:checkedIconEnabled="false"
     app:chipBackgroundColor="@color/white"
     app:chipCornerRadius="6dp"
+    android:fontFamily="@font/dm_sans"
     android:letterSpacing="0.03"
     style="@style/Widget.MaterialComponents.Chip.Filter"
     android:textColor="@color/black"/>
