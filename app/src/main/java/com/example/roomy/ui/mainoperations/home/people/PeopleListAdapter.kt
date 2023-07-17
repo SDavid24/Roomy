@@ -1,14 +1,12 @@
-package com.example.roomy.ui.mainoperations.home
+package com.example.roomy.ui.mainoperations.home.people
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.roomy.R
 import com.example.roomy.databinding.ItemPeopleRecyclerviewBinding
-import com.example.roomy.dataobject.User
 import com.example.roomy.dataobject.UserTest
 
 class PeopleListAdapter(private val peopleList: ArrayList<UserTest>, private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

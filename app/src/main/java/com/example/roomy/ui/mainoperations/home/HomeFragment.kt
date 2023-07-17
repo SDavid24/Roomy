@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.roomy.databinding.FragmentHomeBinding
+import com.example.roomy.ui.mainoperations.home.people.PeopleVPAdapterVPAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {

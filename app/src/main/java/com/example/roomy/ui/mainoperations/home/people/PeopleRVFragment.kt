@@ -1,4 +1,4 @@
-package com.example.roomy.ui.mainoperations.home
+package com.example.roomy.ui.mainoperations.home.people
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roomy.R
 import com.example.roomy.databinding.FragmentPeopleRVBinding
 import com.example.roomy.dataobject.UserTest
-import com.example.roomy.ui.mainoperations.home.PeopleListAdapter
 
 
 class PeopleRVFragment : Fragment() {

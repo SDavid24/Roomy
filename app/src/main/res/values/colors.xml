@@ -12,6 +12,7 @@
     <color name="faded_green">#47A9A6</color>
     <color name="faint_green">#D8ECEC</color>
     <color name="edit_text_bg_grey">#F2F2F2</color>
+    <color name="input_message_text_bg_grey">#F0EEEE</color>
     <color name="edit_text_bg_grey_2">#E2E2E2</color>
     <color name="hint_text_grey">#777777</color>
     <color name="transparent">#00FFFFFF</color>
@@ -20,6 +21,7 @@
     <color name="uploadPhoto_grey">#7A7D81</color>
     <color name="dark_grey">#5F5F5F</color>
     <color name="recyclerview_grey">#625555</color>
+    <color name="view_line_grey">#CDCDCD</color>
 
 
     <color name="apartment_recyclerview_grey">#4E4242</color>

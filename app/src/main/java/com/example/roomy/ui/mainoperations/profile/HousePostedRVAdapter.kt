@@ -8,7 +8,6 @@ import com.bumptech.glide.Glide
 import com.example.roomy.R
 import com.example.roomy.databinding.ItemHousePostedBinding
 import com.example.roomy.dataobject.Apartment
-import com.example.roomy.ui.mainoperations.home.PeopleListAdapter
 
 class HousePostedRVAdapter(private val context: Context,
                            private val housePostedList : ArrayList<Apartment>)

@@ -7,7 +7,6 @@ data class UserTest(
     var state: String ,
     var occupation: String,
     var image: Int
-
 )
 
 

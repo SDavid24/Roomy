@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mainoperations.messaging.ChatActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_collapseMode="pin"
+        android:visibility="visible"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:layout_marginEnd="12dp"
+        app:elevation="0dp"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <LinearLayout
+            android:paddingStart="-5dp"
+            android:paddingEnd="-15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="30dp"
+                android:id="@+id/arrow_back"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/black"
+                android:layout_marginStart="12dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/headerImg"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:src="@drawable/img_1"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="3dp"
+                    android:text="David Solomon"
+                    android:fontFamily="@font/dm_sans"
+                    />
+
+                <TextView
+                    android:id="@+id/tvLastSeen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="#625555"
+                    android:textStyle="normal"
+                    android:textSize="10sp"
+                    android:text="Active 6hrs ago"
+                    android:fontFamily="@font/dm_sans"
+                    />
+
+            </LinearLayout>
+
+            
+            <LinearLayout
+                android:id="@+id/llIcons"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="end"
+                android:layout_marginEnd="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_call"/>
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/ic_video_call"/>
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/ic_more_horiz"/>
+            </LinearLayout>
+
+            
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/view_line_grey"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"/>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/appBarContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/enlargedHeaderImg"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/img_1"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="David Solomon"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/dm_sans"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.03"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lives in Yaba, Lagos."
+                    android:textSize="11sp"
+                    android:textColor="@color/recyclerview_grey"
+                    android:fontFamily="@font/dm_sans"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-0.5dp"
+                    android:text="22 years old"
+                    android:textSize="11sp"
+                    android:textColor="@color/recyclerview_grey"
+                    android:fontFamily="@font/dm_sans"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CDCDCD"
+        app:layout_constraintBottom_toTopOf="@+id/inputMessage"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/inputMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_input_message"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:textColorHint="@color/hint_text_grey"
+            android:hint="Send message"
+            android:layout_marginStart="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="17dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:letterSpacing="0.03"
+            android:background="@drawable/bg_inputmessage"
+            />
+
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_send_android"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_photo_camera"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

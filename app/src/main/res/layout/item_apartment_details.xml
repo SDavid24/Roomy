@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--
+    <ImageView
+        android:id="@+id/apartmentImage"
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/apartment5"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        />
+-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/imagesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_apartment_images"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/imagesRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="17dp">
+
+        <TextView
+            android:id="@+id/tvRentPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="20sp"
+            tools:text="N700,000"
+            android:gravity="center_vertical"
+            android:textSize="17sp"
+            android:textColor="@color/custom_green"
+            android:textStyle="bold"
+            android:fontFamily="@font/dm_sans"/>
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Two bedroom office space"
+            android:textSize="13sp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/apartment_recyclerview_grey"
+            android:fontFamily="@font/dm_sans"/>
+
+        <TextView
+            android:id="@+id/tvFurnishStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:gravity="center_vertical"
+            tools:text="Semi-furnished"
+            android:textSize="13sp"
+            android:textColor="@color/apartment_recyclerview_grey"
+            android:fontFamily="@font/dm_sans"/>
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Lagos State, Surulere"
+            android:textSize="13sp"
+            android:gravity="center_vertical"
+            android:paddingTop="0dp"
+            android:paddingBottom="3dp"
+            android:textColor="@color/apartment_recyclerview_grey"
+            android:fontFamily="@font/dm_sans"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

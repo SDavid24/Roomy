@@ -1,23 +1,16 @@
 package com.example.roomy.ui.mainoperations.profile
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import com.example.roomy.R
-import com.example.roomy.databinding.ActivityMainBinding
 import com.example.roomy.databinding.ActivityProfileBinding
 import com.example.roomy.databinding.ItemInterestChipBinding
-import com.example.roomy.databinding.NavActivityMainBinding
 import com.example.roomy.databinding.NavActivityProfileBinding
 import com.example.roomy.dataobject.Apartment
 import com.example.roomy.ui.mainoperations.RoomyBaseActivity
-import com.google.android.material.chip.Chip
 
 class ProfileActivity : RoomyBaseActivity() {
     private lateinit var profileBinding: ActivityProfileBinding
@@ -42,52 +35,40 @@ class ProfileActivity : RoomyBaseActivity() {
         navDrawerConfiguration(navProfileBinding.navView, navProfileBinding.navDrawerLayout, this)
         bottomNavClickListener(7, navProfileBinding.activityProfileInNav.bottomNavigation, this)
 
-        setInterestChips()
+        setInterestChips(navProfileBinding.activityProfileInNav.interestChipGroup)
 
         setupHousePostedRecyclerView()
     }
 
 
-    //Configure the behaviour of picking the interests, adding it to an arrraylist
-    private fun setInterestChips() {
-        interests.add("Books")
-        interests.add("Football")
-        interests.add("Travel")
-        interests.add("Cartoons")
-        interests.add("Karaoke")
-        interests.add("Messi")
-
-        for (interest in interests) {
-            val chip =
-                LayoutInflater.from(this).inflate(R.layout.item_interest_chip, null) as Chip
-
-            chip.text = interest
-            chip.setTextColor(resources.getColor(R.color.custom_red))
-
-            chip.isClickable = false
-            navProfileBinding.activityProfileInNav.interestChipGroup.addView(chip)
-
-        }
-    }
 
     private fun setupHousePostedRecyclerView() {
         val list = ArrayList<Apartment>()
 
-        list.add(Apartment(
-            R.drawable.apartment5, "One bedroom studio apartment ", "Semi-furnished", "Lekki",
+        val apartImage1 = ArrayList<Int>()
+        apartImage1.add(R.drawable.apartment6)
+        val apartImage2 = ArrayList<Int>()
+        apartImage2.add(R.drawable.apartment5)
+        val apartImage3 = ArrayList<Int>()
+        apartImage3.add(R.drawable.apartment4)
+
+
+        list.add(Apartment(1,
+            apartImage1, "One bedroom studio apartment ",
+            "Semi-furnished", "Lekki",
             "Lagos state", "₦1,200,000"
         ))
 
         list.add(
-            Apartment(
-                R.drawable.apartment4, "Three bedroom apartment", "Fully-furnished", "Bodija",
+            Apartment(1, apartImage2, "Three bedroom apartment",
+                "Fully-furnished", "Bodija",
                 "Oyo state", "₦800,000"
             )
         )
 
         list.add(
-            Apartment(
-                R.drawable.apartment6, "Two bedroom office space", "Not-furnished", "Ketu",
+            Apartment(3, apartImage3, "Two bedroom office space",
+                "Not-furnished", "Ketu",
                 "Lagos state", "₦500,000"
             )
         )

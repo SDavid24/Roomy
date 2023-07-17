@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.Toast
@@ -17,6 +18,8 @@ import com.example.roomy.ui.mainoperations.notifications.NotificationsFragment
 import com.example.roomy.ui.mainoperations.profile.ProfileActivity
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import com.google.android.material.navigation.NavigationView
 import javax.annotation.meta.When
 
@@ -221,5 +224,29 @@ open class RoomyBaseActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+
+    //Configure the behaviour of picking the interests, adding it to an arrraylist
+     fun setInterestChips(chipGroup: ChipGroup) {
+        val interests = ArrayList<String>()
+
+        interests.add("Books")
+        interests.add("Football")
+        interests.add("Travel")
+        interests.add("Cartoons")
+        interests.add("Karaoke")
+        interests.add("Messi")
+
+        for (interest in interests) {
+            val chip =
+                LayoutInflater.from(this).inflate(R.layout.item_interest_chip, null) as Chip
+
+            chip.text = interest
+            chip.setTextColor(resources.getColor(R.color.custom_red))
+
+            chip.isClickable = false
+            chipGroup.addView(chip)
+
+        }
+    }
 
 }

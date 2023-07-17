@@ -14,14 +14,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Roomy">
         <activity
+            android:name=".ui.mainoperations.messaging.ChatActivity"
+            android:theme="@style/Theme.Roomy.NoActionBar2"
+            android:exported="true" >
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.mainoperations.home.apartment.ApartmentDetailsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Roomy.NoActionBar2">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".ui.mainoperations.profile.OtherUsersProfileActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Roomy.NoActionBar2">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
             android:name=".ui.mainoperations.RoomyBaseActivity"
             android:exported="false" />
         <activity
             android:name=".ui.mainoperations.profile.ProfileActivity"
             android:exported="true"
-            android:theme="@style/Theme.Roomy.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.Roomy.NoActionBar" />
         <activity
             android:name=".ui.onboarding.splashscreens.FirstActivity"
             android:exported="true" />
@@ -35,7 +69,7 @@
         <activity
             android:name=".ui.mainoperations.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Roomy.NoActionBar2" >
+            android:theme="@style/Theme.Roomy.NoActionBar2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

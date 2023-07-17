@@ -1,4 +1,4 @@
-package com.example.roomy.ui.mainoperations.home
+package com.example.roomy.ui.mainoperations.home.apartment
 
 import android.content.Context
 import android.view.LayoutInflater

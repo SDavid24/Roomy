@@ -1,10 +1,11 @@
-package com.example.roomy.ui.mainoperations.home
+package com.example.roomy.ui.mainoperations.home.people
 
 import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.roomy.ui.mainoperations.home.apartment.ApartmentRVFragment
 
 
 class PeopleVPAdapterVPAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
