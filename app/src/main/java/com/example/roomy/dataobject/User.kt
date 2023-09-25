@@ -2,9 +2,17 @@ package com.example.roomy.dataobject
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
+import com.example.roomy.utils.ListTypeConverter
 
+@Entity(tableName = "user_data")
+@TypeConverters(ListTypeConverter::class) // Apply the TypeConverter here
 data class User(
-    val id: String = "",
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val userId: String = "",
     var firstName: String = "",
     var lastName: String = "",
     var email: String = "",
@@ -16,6 +24,7 @@ data class User(
     val fcmToken: String = "",
 ) : Parcelable {
     constructor(source: Parcel) : this(
+        source.readInt()!!,
         source.readString()!!,
         source.readString()!!,
         source.readString()!!,
@@ -31,7 +40,7 @@ data class User(
     override fun describeContents() = 0
 
     override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
-        writeString(id)
+        writeInt(id)
         writeString(firstName)
         writeString(lastName)
         writeString(email)

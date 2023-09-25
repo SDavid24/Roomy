@@ -16,7 +16,7 @@
         />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/im_view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#20000000"
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:text="Posted By:"
-        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@id/im_view"
         android:layout_marginStart="18dp"
         android:layout_marginTop="8dp"
         android:textColor="@color/black"

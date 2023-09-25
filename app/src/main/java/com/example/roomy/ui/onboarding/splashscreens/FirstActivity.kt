@@ -5,10 +5,12 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.WindowManager
 import com.example.roomy.R
+import com.example.roomy.database.RoomDB
 import com.example.roomy.databinding.ActivityFirstBinding
+import com.example.roomy.ui.firebase.FirestoreClass
+import com.example.roomy.ui.mainoperations.MainActivity
 import com.example.roomy.ui.onboarding.OnBoardingActivity
 
 class FirstActivity : AppCompatActivity() {
@@ -40,21 +42,24 @@ class FirstActivity : AppCompatActivity() {
 
     //This method makes the Splash activity move to the Intro or main activity after the stipulated time
     private fun splashLoad() {
-
-        Handler().postDelayed( {
-
-
-            startActivity(Intent(this, OnBoardingActivity::class.java))
+        Handler().postDelayed({
+            //startActivity(Intent(this, OnBoardingActivity::class.java))
             //Log.d(TAG, "got to stage 1")
+            val currentUserId = FirestoreClass().getCurrentUserId()
 
-                //val currentUserId = FireStoreClass().getCurrentUserId()
-                /*  if (currentUserId.isNotEmpty()){
-                  startActivity(Intent(this, MainActivity::class.java))
-              }else{
-                  startActivity(Intent(this, IntroActivity::class.java))
-              }*/
-                finish()
-            }, 2500
-        )
+            if (currentUserId.isNotEmpty()){
+                startActivity(Intent(this, MainActivity::class.java))
+            } else {
+                startActivity(Intent(this, OnBoardingActivity::class.java))
+            }
+
+            finish()
+
+        }, 2500)
     }
+
+
+
+
+
 }

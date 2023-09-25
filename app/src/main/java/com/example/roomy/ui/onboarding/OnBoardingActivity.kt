@@ -33,12 +33,12 @@ class OnBoardingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_onboarding)
 
         Log.d(TAG, "got to stage 1")
-        supportFragmentManager.beginTransaction().apply {
+       /* supportFragmentManager.beginTransaction().apply {
             replace(R.id.flFragment, uploadFirstPhotosFragment)
             commit()
-        }
+        }*/
 
-        //splashLoad()
+        splashLoad()
 
     }
 

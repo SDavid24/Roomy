@@ -1,4 +1,4 @@
-package com.example.roomy.ui.onboarding.firebase
+package com.example.roomy.ui.firebase
 
 import android.content.Context
 import android.util.Log

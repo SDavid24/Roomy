@@ -13,7 +13,7 @@ class OtherUsersProfileActivity : RoomyBaseActivity() {
         otherUsersBinding = ActivityOtherUsersProfileBinding.inflate(layoutInflater)
         setContentView(otherUsersBinding.root)
 
-        setInterestChips(otherUsersBinding.interestChipGroup!!)
+        //setInterestChips(otherUsersBinding.interestChipGroup!!)
 
     }
 }

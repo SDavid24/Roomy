@@ -2,7 +2,6 @@ package com.example.roomy.ui.mainoperations
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.LinearLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
 import com.example.roomy.R
@@ -11,18 +10,21 @@ import com.example.roomy.databinding.NavActivityMainBinding
 import com.example.roomy.ui.mainoperations.home.HomeFragment
 import com.example.roomy.ui.mainoperations.messaging.MessageFragment
 import com.example.roomy.ui.mainoperations.notifications.NotificationsFragment
-import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
+import com.example.roomy.databinding.NavHeaderDrawerBinding
+import kotlinx.coroutines.launch
 
 
 class MainActivity : RoomyBaseActivity() {
     private val TAG: String = MainActivity::class.java.simpleName
-
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var mainBinding: ActivityMainBinding
     lateinit var navMainBinding: NavActivityMainBinding
     private val homeFragment = HomeFragment()
     private val notificationsFragment = NotificationsFragment()
     private val messageFragment = MessageFragment()
+
     //private val iconArray = arrayOf(R.drawable.nav_home2, R.drawable.nav_notification2, R.drawable.nav_message2)
    // private val iconArray2 = arrayOf(R.drawable.nav_home, R.drawable.nav_notification, R.drawable.nav_message)
 
@@ -30,6 +32,9 @@ class MainActivity : RoomyBaseActivity() {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         navMainBinding = NavActivityMainBinding.inflate(layoutInflater)
+        navHeaderDrawerBinding = NavHeaderDrawerBinding.inflate(layoutInflater)
+        navHeaderDrawerBinding = NavHeaderDrawerBinding.bind(navMainBinding.navView.getHeaderView(0))
+
         setContentView(navMainBinding.root)
         Log.d(TAG, "gets here for testing")
 
@@ -61,10 +66,28 @@ class MainActivity : RoomyBaseActivity() {
             loadFragment(homeFragment)
         }
 
+        lifecycleScope.launch {
+            configureUserPage()
+        }
 
         bottomNavClickListener(8, navMainBinding.activityMainInNav.bottomNavigation, this)
     }
 
+    //Get the user's details and customise his page par his details
+    private suspend fun configureUserPage(){
+        user = userViewModel.getUser()!!
+
+        Glide.with(this)
+            .load(user.displayImage) // Provide the file path
+            .into(headerImg)
+
+        Glide.with(this)
+            .load(user.displayImage) // Provide the file path
+            .into(navHeaderDrawerBinding.acctImage)
+
+        navHeaderDrawerBinding.acctEmail.text = user.email
+        navHeaderDrawerBinding.acctName.text = "${user.firstName} ${user.lastName}"
+    }
 
     private fun loadFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()

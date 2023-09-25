@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
@@ -11,7 +12,11 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.roomy.R
+import com.example.roomy.viewmodel.UserViewModel
+import com.example.roomy.databinding.NavHeaderDrawerBinding
+import com.example.roomy.dataobject.User
 import com.example.roomy.ui.mainoperations.home.HomeFragment
 import com.example.roomy.ui.mainoperations.messaging.MessageFragment
 import com.example.roomy.ui.mainoperations.notifications.NotificationsFragment
@@ -21,22 +26,27 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.navigation.NavigationView
-import javax.annotation.meta.When
 
 open class RoomyBaseActivity : AppCompatActivity() {
-
+    lateinit var userViewModel: UserViewModel
     private val homeFragment = HomeFragment()
     private val notificationsFragment = NotificationsFragment()
     private val messageFragment = MessageFragment()
+    lateinit var navHeaderDrawerBinding: NavHeaderDrawerBinding
     lateinit var headerImg: de.hdodenhof.circleimageview.CircleImageView
     lateinit var frameLayout: FrameLayout
     lateinit var appBarLayout: AppBarLayout
+    lateinit var user: User
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_roomy_base)
+        userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
+        navHeaderDrawerBinding = NavHeaderDrawerBinding.inflate(layoutInflater)
+        userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
+
     }
 
     fun bottomNavClickListener(notifications : Int, bottomNavigationView: BottomNavigationView, activity: Activity){
@@ -226,15 +236,14 @@ open class RoomyBaseActivity : AppCompatActivity() {
 
 
     //Configure the behaviour of picking the interests, adding it to an arrraylist
-     fun setInterestChips(chipGroup: ChipGroup) {
-        val interests = ArrayList<String>()
+     fun setInterestChips(chipGroup: ChipGroup, interests : ArrayList<String>) {
 
-        interests.add("Books")
+        /*interests.add("Books")
         interests.add("Football")
         interests.add("Travel")
         interests.add("Cartoons")
         interests.add("Karaoke")
-        interests.add("Messi")
+        interests.add("Messi")*/
 
         for (interest in interests) {
             val chip =
@@ -247,6 +256,9 @@ open class RoomyBaseActivity : AppCompatActivity() {
             chipGroup.addView(chip)
 
         }
+        Log.d("ProfileActivity", "user loaded interest is: $interests")
+
     }
+
 
 }

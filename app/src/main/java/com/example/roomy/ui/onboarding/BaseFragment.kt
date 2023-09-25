@@ -12,7 +12,6 @@ import com.example.roomy.R
 import com.example.roomy.databinding.FragmentBaseBinding
 import com.google.android.material.snackbar.Snackbar
 
-
 open class BaseFragment : Fragment() {
     lateinit var mProgressDialog : Dialog
     lateinit var baseBinding: FragmentBaseBinding

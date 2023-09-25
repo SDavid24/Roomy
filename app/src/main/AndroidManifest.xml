@@ -16,7 +16,9 @@
         <activity
             android:name=".ui.mainoperations.messaging.ChatActivity"
             android:theme="@style/Theme.Roomy.NoActionBar2"
-            android:exported="true" >
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
@@ -28,13 +30,8 @@
             android:exported="true"
             android:theme="@style/Theme.Roomy.NoActionBar2">
 
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
+
         </activity>
         <activity
             android:name=".ui.mainoperations.profile.OtherUsersProfileActivity"
@@ -58,7 +55,14 @@
             android:theme="@style/Theme.Roomy.NoActionBar" />
         <activity
             android:name=".ui.onboarding.splashscreens.FirstActivity"
-            android:exported="true" />
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+        </activity>
         <activity
             android:name=".ui.onboarding.OnBoardingActivity"
             android:exported="true"

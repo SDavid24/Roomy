@@ -103,7 +103,7 @@ class InputFiveDigitFragment : OnboardBaseFragment() {
                     val firebaseUser: FirebaseUser = task.result!!.user!! //How to access the user
                     val registeredPhoneNumber = firebaseUser.phoneNumber!!
 
-                    val user = User(
+                    val user = User(0,
                         firebaseUser.uid, firstname,
                         lastname, email,
                         registeredPhoneNumber.toLong(),

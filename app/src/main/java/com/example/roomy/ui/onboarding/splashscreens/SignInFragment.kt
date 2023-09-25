@@ -12,7 +12,7 @@ import com.example.roomy.ui.mainoperations.MainActivity
 import com.example.roomy.R
 import com.example.roomy.databinding.FragmentSignInBinding
 import com.example.roomy.dataobject.User
-import com.example.roomy.ui.onboarding.firebase.FirestoreClass
+import com.example.roomy.ui.firebase.FirestoreClass
 import com.example.roomy.ui.onboarding.BaseFragment
 import com.google.firebase.auth.FirebaseAuth
 

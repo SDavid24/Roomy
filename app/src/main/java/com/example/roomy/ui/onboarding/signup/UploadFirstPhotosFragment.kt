@@ -19,15 +19,17 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.net.toUri
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.roomy.ui.mainoperations.MainActivity
 import com.example.roomy.R
+import com.example.roomy.viewmodel.UserViewModel
 import com.example.roomy.utils.Constants.CAMERA_CODE
 import com.example.roomy.utils.Constants.GALLERY_REQUEST_CODE
 import com.example.roomy.utils.Constants.IMAGE_DIRECTORY
 import com.example.roomy.databinding.FragmentUploadFirstPhotosBinding
 import com.example.roomy.dataobject.User
-import com.example.roomy.ui.onboarding.firebase.FirestoreClass
+import com.example.roomy.ui.firebase.FirestoreClass
 import com.example.roomy.ui.onboarding.OnBoardingActivity
 import com.example.roomy.ui.onboarding.OnboardBaseFragment
 import com.example.roomy.utils.Constants
@@ -50,6 +52,7 @@ import java.util.*
 class UploadFirstPhotosFragment : OnboardBaseFragment() {
 
     private lateinit var uploadFirstPhotosBinding: FragmentUploadFirstPhotosBinding
+    private lateinit var userViewModel: UserViewModel
     private var TAG = "UploadFirstPhotosFragment"
     private var contentURI : Uri? = null
     private var saveImageToInternalStorageUri : Uri? = null
@@ -81,6 +84,7 @@ class UploadFirstPhotosFragment : OnboardBaseFragment() {
     ): View {
         uploadFirstPhotosBinding =
             FragmentUploadFirstPhotosBinding.inflate(inflater, container, false)
+        userViewModel = ViewModelProvider(requireActivity())[UserViewModel::class.java]
         // Inflate the layout for this fragment
         return uploadFirstPhotosBinding.root
     }
@@ -476,7 +480,7 @@ class UploadFirstPhotosFragment : OnboardBaseFragment() {
                         val firebaseUser: FirebaseUser =
                             task.result!!.user!! //How to access the user
                         val registeredEmail = firebaseUser.email!!
-                        val user = User(
+                        val user = User(0,
                             firebaseUser.uid,
                             firstname,
                             lastname,
@@ -488,7 +492,8 @@ class UploadFirstPhotosFragment : OnboardBaseFragment() {
                             coverImage
                         )
 
-                        FirestoreClass().registerUser(user, requireContext(), this)
+                        userViewModel.saveNewUser(user) //Save to local db
+                        FirestoreClass().registerUser(user, requireContext(), this) //Save to Firebase
 
                     } else {
                         toastMessage("Registration failed", requireContext())

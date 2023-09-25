@@ -1,27 +1,28 @@
 package com.example.roomy.ui.mainoperations.profile
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.WindowManager
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
+import com.bumptech.glide.Glide
 import com.example.roomy.R
-import com.example.roomy.databinding.ActivityProfileBinding
 import com.example.roomy.databinding.ItemInterestChipBinding
 import com.example.roomy.databinding.NavActivityProfileBinding
 import com.example.roomy.dataobject.Apartment
 import com.example.roomy.ui.mainoperations.RoomyBaseActivity
+import kotlinx.coroutines.launch
 
 class ProfileActivity : RoomyBaseActivity() {
-    private lateinit var profileBinding: ActivityProfileBinding
     private lateinit var itemInterestChipBinding: ItemInterestChipBinding
     lateinit var navProfileBinding: NavActivityProfileBinding
-    private val interests = ArrayList<String>()
+    private var interests = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        profileBinding = ActivityProfileBinding.inflate(layoutInflater)
         navProfileBinding = NavActivityProfileBinding.inflate(layoutInflater)
         itemInterestChipBinding = ItemInterestChipBinding.inflate(layoutInflater)
         setContentView(navProfileBinding.root)
@@ -35,9 +36,12 @@ class ProfileActivity : RoomyBaseActivity() {
         navDrawerConfiguration(navProfileBinding.navView, navProfileBinding.navDrawerLayout, this)
         bottomNavClickListener(7, navProfileBinding.activityProfileInNav.bottomNavigation, this)
 
-        setInterestChips(navProfileBinding.activityProfileInNav.interestChipGroup)
-
         setupHousePostedRecyclerView()
+
+        lifecycleScope.launch {
+            configureUserPage()
+        }
+
     }
 
 
@@ -86,4 +90,31 @@ class ProfileActivity : RoomyBaseActivity() {
         housePostedRVAdapter.notifyDataSetChanged()
 
     }
+
+    //Get the user's details and customise his page par his details
+    private suspend fun configureUserPage(){
+        user = userViewModel.getUser()!!
+
+        navProfileBinding.activityProfileInNav.tvStudiedAt.text = "Studied at University of Chicago"
+
+        interests = user.interests as ArrayList<String>
+
+        //Set user's profile and cover images
+        try {
+            Glide.with(this)
+                .load(Uri.parse(user.displayImage))
+                .into(navProfileBinding.activityProfileInNav.userProfileImage)
+
+            Glide.with(this)
+                .load(user.coverImage)
+                .into(navProfileBinding.activityProfileInNav.userCoverImage)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        //Setting the user interests par what he chose when signing up or during editing
+        setInterestChips(navProfileBinding.activityProfileInNav.interestChipGroup, interests)
+
+    }
+
 }

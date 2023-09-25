@@ -7,7 +7,7 @@
     tools:context=".ui.mainoperations.messaging.MessageFragment">
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/im_view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/view_line_grey"
@@ -26,7 +26,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@id/im_view"
         android:textColor="@color/black"
         android:text="Message" />
 
